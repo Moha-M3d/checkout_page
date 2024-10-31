@@ -1,0 +1,313 @@
+* {
+    box-sizing: border-box;
+    
+    /* Color Scheme */
+    --dark-gray: #6C727F;
+    --transparent-black: #0000000033;
+    --black-color: #1D1D1F;
+    --light-gray: #F3F4F6;
+    --white: #FFFFFF;
+    --gray: #D2D5DA;
+    --light-blue: #95AAD0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Utility Classes */
+.text-gray {
+    color: var(--dark-gray);
+}
+/* Start Main Rules */
+body {
+    margin: 0;
+    font-family: 'Inter', 'Sans-serif'
+}
+.checkout {
+    background-image: url(./assets/images/background-image@2x.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 2rem;
+}
+
+.checkout .wrapper {
+    display: flex;
+    border-radius: .75rem;
+    overflow: hidden;
+}
+
+@media (max-width: 991px) {
+    .checkout .wrapper {
+        display: block;
+    }
+}
+
+.checkout .wrapper > * {
+    flex: 1;
+}
+
+@media (max-width: 600px) {
+   .checkout {
+    padding: 0;
+   } 
+}
+
+.checkout h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--white);
+    width: fit-content;
+    margin-inline: auto;
+    padding: 1rem;
+}
+
+.checkout h2 > span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .3rem .5rem;
+    margin-inline-start: .5rem;
+    border-radius: 1rem;
+    background-color: var(--light-blue);
+    font-size: .8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.checkout__summary {
+    padding: 2rem;
+    background-color: var(--light-gray);
+}
+
+@media (max-width: 600px) {
+    .checkout__summary {
+        padding: 1rem;
+    }
+}
+
+.checkout .product {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.checkout .product__img {
+    flex: 0 0 100px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .75rem;
+    background-color: var(--white);
+    border: 1px solid var(--gray);
+    border-radius: 10px;
+}
+
+.checkout .product__img > img {
+    height: 100%;
+}
+
+.checkout .product__info {
+    align-self: stretch;
+    flex: 1;
+    display: grid;
+    grid-template-areas: "product-name product-price" "product-color product-color" "product-quantity remove-btn"; 
+    column-gap: 1rem;
+}
+
+.checkout .product__info .product__name {
+    grid-area: product-name;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.checkout .product__info .product__color {
+    grid-area: product-color;
+}
+
+.checkout .product__info .product__price {
+    grid-area: product-price;
+    text-align: end;
+    font-weight: 600;
+}
+
+.checkout .product__info .product__quantity {
+    grid-area: product-quantity;
+    margin-top: auto;
+}
+
+.checkout .product__info .remove-product-btn {
+    grid-area: remove-btn;
+    margin-top: auto;
+    text-align: end
+}
+
+.product__info .remove-product-btn button {
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    padding: .1225rem;
+    border-radius: .25rem;
+    border-style: solid;
+    border-color: transparent;
+    transition: border-color 300ms;
+}
+
+.product__info .remove-product-btn button:hover {
+    border-color: var(--light-blue);
+}
+
+.products-list + hr {
+   border-width: 1px 0 0;
+   border-color: var(--gray);
+   border-style: solid;
+   margin-block: 1rem;
+}
+
+.checkout .coupon {
+    display: flex;
+    gap: .75rem;
+    margin-block: 1.5rem;
+}
+
+.checkout .coupon-input {
+    flex: 1;
+    min-width: 0;
+    outline: none;
+    border: none;
+    padding: 1rem;
+    border-radius: .5rem;
+    box-shadow: 0 0 3px var(--gray);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.checkout .coupon-input:focus {
+    box-shadow: 0 0 3px var(--dark-gray)
+}
+
+.checkout .coupon-input::placeholder {
+    font-size: 1rem;
+    color: var(--dark-gray)
+}
+
+.checkout .coupon-btn {
+    outline: none;
+    border: none;
+    background-color: var(--black-color);
+    border-radius: .5rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    text-wrap: nowrap;
+    color: var(--white);
+    padding-inline: 1rem;
+    cursor: pointer;
+}
+
+.checkout .coupon-btn:is(:hover) {
+    opacity: .8;
+}
+
+.checkout .summary__total {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.checkout .summary__total > * {
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkout .summary__total span {
+    font-weight: 600;
+}
+
+.checkout .summary__total h4 {
+    margin: 0
+}
+
+.checkout .checkout__contact {
+    padding: 2rem;
+    background-color: var(--white);
+}
+
+.checkout .checkout__contact h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--black-color);
+}
+
+.checkout .checkout__contact .form-group {
+    margin-bottom: 1.5rem;
+}
+.checkout .checkout__contact .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkout .checkout__contact > .form-group:last-of-type {
+    flex-direction: row;
+    column-gap: 1rem;
+}
+
+.checkout .checkout__contact label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark-gray);
+    margin-bottom: .5rem;
+}
+
+.checkout .checkout__contact :is(input, select) {
+    border: 1px solid var(--gray);
+    border-radius: .5rem;
+    outline: none;
+    padding: 1rem;
+    background-color: var(--light-gray);
+    font-family: inherit;
+    font-size: 1rem;
+    min-width: 0;
+    width: 100%;
+}
+
+.checkout .checkout__contact select {
+    font-weight: 500;
+}
+
+.checkout .checkout__contact input::placeholder {
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--dark-gray)
+}
+
+.checkout .checkout__contact :is(input, select):focus {
+    box-shadow: 0 0 3px var(--dark-gray);
+}
+
+.checkout .checkout__contact .form-field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.checkout .checkout__contact button.submit-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-block-start: 2rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    background-color: var(--black-color);
+    color: var(--white);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;    
+}
